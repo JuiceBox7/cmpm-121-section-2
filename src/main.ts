@@ -17,6 +17,9 @@ let gameOver = true;
 
 document.addEventListener("mousedown", () => jump());
 
+// const birdMovement = <HTMLElement> document.getElementsByClassName('birdMove')[0];
+// birdMovement.style.animationDuration = '2.5s'
+
 setInterval(function () {
   Main();
 }, 10);
