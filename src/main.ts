@@ -17,6 +17,16 @@ let gameOver = true;
 
 document.addEventListener("mousedown", () => jump());
 
+// attempted to speed up cactus and bird animation
+
+// const birdMovement = document.getElementsByClassName('birdMove')[0]
+// if (birdMovement === null) {
+//     console.log('doesnt exist')
+// }
+//  else {
+//     console.log(`${birdMovement.id}`)
+//  }
+
 setInterval(function () {
   Main();
 }, 10);
@@ -69,21 +79,10 @@ function CheckGameOver() {
     );
 
     //detect cactus collision
-    if (dinoTop >= 150 && Math.abs(cactusleft) < 7) {
-      //end game
-      console.log("player died!");
-      SetText("Final Score: " + score + "! Click To Play Again!");
-      gameOver = true;
-
-      //reset player
-      RemoveJump();
-
-      //reset cactus
-      RemoveObstacles();
-    }
-
-    //detect bird collision
-    if (dinoTop <= 55 && Math.abs(birdleft) < 11) {
+    if (
+      (dinoTop >= 150 && Math.abs(cactusleft) < 7) ||
+      (dinoTop <= 55 && Math.abs(birdleft) < 11)
+    ) {
       //end game
       console.log("player died!");
       SetText("Final Score: " + score + "! Click To Play Again!");
